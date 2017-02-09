@@ -18,8 +18,11 @@
 					$this->metodo = "index";
 				}
 				$this->argumento = $ruta;
-				print_r ($ruta);
-				
+								
+			}
+			else {
+				$this->controlador = "welcome";
+				$this->metodo = "index";
 			}
 		}
 

@@ -7,7 +7,7 @@
 			$ruta = RUTA_BASE. "Controllers".DS. $controlador.".php";
 			
 			$metodo = $request->obtenerMetodo();
-			print $metodo;
+			
 			$argumento = $request->obtenerArgumento();
 			if(is_readable($ruta)) {
 				require_once $ruta;
@@ -19,7 +19,20 @@
 				else {
 					call_user_func_array(array($controlador, $metodo), $argumento);
 					}
-			}			
+			}
+			else {
+				echo "la ruta no existe";
+			}	
+
+			//	Cargar vistas.
+			$ruta = RUTA_BASE."views".DS.$request->obtenerControlador().DS.$request->obtenerMetodo().".php";
+			
+			if(is_readable($ruta)) {
+				require_once $ruta;
+			}
+			else {
+				echo "No se encuentra la ruta";
+			}
 
 		}
 	} 

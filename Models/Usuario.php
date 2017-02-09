@@ -30,7 +30,7 @@
 	
 		*/
 		public function verInfo() {
-			echo"HOLAAA";
+			
 		}
 
 
