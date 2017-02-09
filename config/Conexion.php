@@ -1,4 +1,4 @@
-<?php //namespace config;
+<?php namespace config;
 
 	// 	Clase conexión
 	class Conexion {

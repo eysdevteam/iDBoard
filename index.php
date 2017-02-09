@@ -1,5 +1,7 @@
 <?php
-	define("RUTA_BASE", dirname(realpath(__FILE__))."/");
+	define("DS", DIRECTORY_SEPARATOR);
+	define("RUTA_BASE", dirname(realpath(__FILE__)).DS);
+	
 	include "library/core.php";
 	
 	use config\Request;
