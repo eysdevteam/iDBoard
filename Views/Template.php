@@ -14,6 +14,9 @@
 			<!-- Latest compiled and minified CSS -->
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
+			<!-- Latest compiled and minified CSS -->
+			<link rel="stylesheet" href="<?php echo URL ?>/views/template/css/main.css">
+
 			<!-- jQuery library -->
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
@@ -21,11 +24,33 @@
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 		</head>
 		<body>
+					
+			<nav class="navbar navbar-inverse">
+			  <div class="container-fluid">
+			    <div class="navbar-header">
+			      <a class="navbar-brand" href="#">eys Soluciones</a>
+			    </div>
+			    
+			    <ul class="nav navbar-nav navbar-right">
+			      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+			      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-align-justify"></span></a>
+			      	<ul class="dropdown-menu">
+			          <li><a href="#">Perfil</a></li>
+			          <li><a href="#">Servidores</a></li>
+			          <li><a href="#">Servicios</a></li>
+			          <li><a href="#">Listas</a></li>
+			        </ul>
+			      </li>
+			     
+			    </ul>
+			  </div>
+			</nav>
 			
 		</body>
 		</html>
 
 		<?php 
+
 
 
 		
