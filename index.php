@@ -11,7 +11,7 @@
 	include "views/Template.php";
 	Enrutador::run(new Request());
 	
-	echo RUTA_BASE;	
+	
 	
 	
 	

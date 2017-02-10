@@ -1,5 +1,6 @@
 <?php namespace Models;
-
+	
+	use config\Conexion as Conexion;
 	class Usuario {
 
 		private $Id;	
@@ -8,6 +9,7 @@
 		private $Pass;
 		private $Estado;
 		private $Privilegio;
+		private $con;
 
 		/**
 		 * Class Constructor
@@ -29,6 +31,11 @@
 		}
 	
 		*/
+
+		public function __construct() {
+			$this->con = new Conexion();			
+		}
+
 		public function verInfo() {
 			
 		}

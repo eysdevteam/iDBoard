@@ -4,7 +4,10 @@
 	class Template {
 
 		public function __construct() {
-		?>
+		
+
+		//
+			?>
 		<!DOCTYPE html>
 		<html lang="es-co">
 		<head>
@@ -15,7 +18,9 @@
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 			<!-- Latest compiled and minified CSS -->
-			<link rel="stylesheet" href="<?php echo URL ?>/views/template/css/main.css">
+			<link rel="stylesheet" href="<?php echo URL; ?>views/template/css/main.css">
+
+			<link rel="stylesheet" href="<?php echo URL; ?>views/template/css/font-awesome.min.css">
 
 			<!-- jQuery library -->
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
