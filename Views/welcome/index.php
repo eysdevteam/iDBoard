@@ -1,8 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		
 		<meta charset="UTF-8">
-		<title>Document</title>
+  		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>iDBoard Bienvenido | eys Soluciones Empresariales IT</title>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+			<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="<?php echo URL; ?>views/template/css/main.css">
+		<link rel="stylesheet" href="<?php echo URL; ?>views/template/css/font-awesome.min.css">
+			<!-- jQuery library -->
+ 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		
 		<script>
 			$(function() {
 
@@ -32,7 +44,7 @@
 					<div class="panel-body">
 						<div class="row">
 							<div class="col-lg-12">
-								<form id="login-form" action="<?php echo URL; ?>dashboard" method="post" role="form" style="display: block;">
+								<form id="login-form" action="<?php echo URL; ?>dashboard/ingresar" method="post" role="form" style="display: block;">
 									<div class="form-group">
 										<input type="text" name="username" class="form-control" placeholder="Usuario" autocomplete="off" required>
 									</div>

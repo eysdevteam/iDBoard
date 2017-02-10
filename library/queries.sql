@@ -5,23 +5,23 @@ use eys;
 
 create table servidores(
 	Id int auto_increment,
-    Nombre varchar(100) not null,
-    primary key(Id_Servidor)
+    servidor varchar(100) not null,
+    primary key(Id)
 );
 
 create table servicios(
 	Id int auto_increment,
-    Servicio varchar(100) not null,
-    primary key(Id_Servidor)
+    servicio varchar(100) not null,
+    primary key(Id)
 );
 
 create table servidor_servicio(
 	Id int auto_increment,
-    Id_Servidor int references servidores(Id_Servidor),
-    Id_Servicio int references servicios(Id_Servicio),
+    Id_servidores int references servidores(Id),
+    Id_servicios int references servicios(Id),
     Valor double not null,
     Tiempo timestamp not null,
-    primary key(Id_Serhost)
+    primary key(Id)
 );
 
 create table usuarios(
@@ -31,7 +31,7 @@ create table usuarios(
     Pass varchar(256) not null,
     Estado int default 0,
     Privilegio varchar(50) not null,
-    primary key(Id_User),
+    primary key(Id),
     UNIQUE (Id)
 );
 

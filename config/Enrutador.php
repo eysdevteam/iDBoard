@@ -23,7 +23,6 @@
 			else {
 				echo "la ruta no existe";
 			}	
-
 			
 			//	Cargar vistas.
 			$ruta = RUTA_BASE."views".DS.$request->obtenerControlador().DS.$request->obtenerMetodo().".php";

@@ -1,13 +1,12 @@
 <?php namespace template;
 
 	$template = new Template();
+
 	class Template {
 
 		public function __construct() {
 		
-
-		//
-			?>
+		?>
 		<!DOCTYPE html>
 		<html lang="es-co">
 		<head>

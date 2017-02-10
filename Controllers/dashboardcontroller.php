@@ -1,18 +1,27 @@
 <?php namespace Controllers;
 
 	use Models\Dashboard;
-	
+		
 	class dashboardcontroller {
 		private $dashboard;
+		public $num;
 		
 		public function __construct() {
-			$this->dashboard = new Dashboard();
+			$this->dashboard = new Dashboard();	
 		}
 		public function index() {
-			$this->dashboard->loginReturn();
+			session_start();
+			if (isset($_SESSION['Nombre'])) {
+				include "views/Template.php";
+			}
+			else {
+				header("location: http://localhost/iDBoard/");
+			}
 		}
 
-		
+		public function ingresar() {
+			$this->dashboard->loginReturn();
+		}
 
 
 	}

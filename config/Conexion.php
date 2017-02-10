@@ -24,7 +24,6 @@
         public function consultaProtegida($sql) {
             
             try{
-                echo "entré al try";
                 $query = $this->con->prepare($sql);
                 $query->execute();
                 return $this->datos = $query;

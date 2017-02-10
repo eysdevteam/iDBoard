@@ -7,8 +7,7 @@
 	
 	use config\Request;
 	use config\Enrutador;
-	config\Autoload::run();	
-	include "views/Template.php";
+	config\Autoload::run();
 	Enrutador::run(new Request());
 	
 	

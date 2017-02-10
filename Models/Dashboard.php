@@ -1,8 +1,10 @@
 <?php namespace Models;
+
 	use config\Conexion;
 	class Dashboard {
 		private $con;
-		private $estado = false;
+		public $user;
+		private $pass;
 
 		public function __construct() {
 			$this->con = new Conexion();			
@@ -13,33 +15,37 @@
 			if(!empty(isset($_POST))) {
 				echo "si hay post";
 				
-				$user = $_POST["username"];
-				$pass = $_POST["password"];
+				$this->user = $_POST["username"];
+				$this->pass = $_POST["password"];
 				
-				$sql = "call sp_login('$user','$pass')";
+				$sql = "call sp_login('$this->user','$this->pass')";
 				
 				$query = $this->con->consultaProtegida($sql);
+				
 
 				if ($this->con->datos->rowCount() > 0 ) {
-				
-					$this->estado = true;
-					echo "pasó";
+					
+					session_start();
+					$resultado = $this->con->datos->fetchAll();
+					$usuario = $resultado[0]["Nombre"];					
+					$_SESSION['Nombre'] = $usuario;					
+					header("location: http://localhost/iDBoard/dashboard");
+					
 				}
 				else {
-					$this->estado = false;
-					echo "no pasó";
+					
+					header("location: http://localhost/iDBoard/");
+
 				}				
 
 			}	
 			else {
 				echo "no hay post";
 			}
-
-
+			
 		}
 
 		public function loginReturn() {
 			self::login();
 		}
-
 	}
