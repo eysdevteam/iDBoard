@@ -36,16 +36,15 @@
 					
 					header("location: http://localhost/iDBoard/");
 
-				}				
+				}		
 
 			}	
-			else {
-				echo "no hay post";
-			}
-			
+						
 		}
 
 		public function loginReturn() {
 			self::login();
 		}
+
+		public function 
 	}

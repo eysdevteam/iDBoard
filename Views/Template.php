@@ -36,7 +36,7 @@
 			    </div>
 			    
 			    <ul class="nav navbar-nav navbar-right">
-			      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+			      <li><a href="#"><span class="glyphicon glyphicon-user"></span><?php echo " ".$_SESSION["Nombre"]?></a></li>
 			      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-align-justify"></span></a>
 			      	<ul class="dropdown-menu">
 			          <li><a href="#">Perfil</a></li>
