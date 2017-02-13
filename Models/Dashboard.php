@@ -1,6 +1,7 @@
 <?php namespace Models;
 
 	use config\Conexion;
+
 	class Dashboard {
 		private $con;
 		public $user;
@@ -46,5 +47,5 @@
 			self::login();
 		}
 
-		public function 
+			
 	}

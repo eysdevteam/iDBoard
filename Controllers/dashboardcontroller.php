@@ -23,6 +23,15 @@
 			$this->dashboard->loginReturn();
 		}
 
+		public function salir() {
+			session_start();
+			
+				unset($_SESSION["Nombre"]);
+				header("location: http://localhost/iDBoard/");
+
+			
+		}
+
 
 	}
 

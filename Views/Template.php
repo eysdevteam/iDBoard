@@ -43,6 +43,7 @@
 			          <li><a href="#">Servidores</a></li>
 			          <li><a href="#">Servicios</a></li>
 			          <li><a href="#">Listas</a></li>
+			          <li><a href="<?php echo URL; ?>dashboard/salir">Cerrar Sesión</a></li>
 			        </ul>
 			      </li>
 			     

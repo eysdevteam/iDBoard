@@ -9,6 +9,9 @@
 	use config\Enrutador;
 	config\Autoload::run();
 	Enrutador::run(new Request());
+
+	
+
 	
 	
 	

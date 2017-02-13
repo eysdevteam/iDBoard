@@ -73,7 +73,7 @@
 	color: #0898db;
 	background-color: #fff;
 	border-color: #0898db ;
-	font-weight: bold
+	font-weight: bold;
 
 }
 .forgot-password {
@@ -92,4 +92,9 @@
       margin-bottom: 0;
       font-size: 1em;
       letter-spacing: 1px;
-  }
+}
+
+.col-lg-4{
+	padding-right: 0px;
+	padding-left: 0px;
+}
