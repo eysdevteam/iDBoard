@@ -40,8 +40,7 @@
 			      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:rgb(164,184,54);"><span class="glyphicon glyphicon-align-justify"></span></a>
 			      	<ul class="dropdown-menu">
 			          <li><a href="#" style="color:rgb(164,184,54);">Perfil</a></li>
-			          <li><a href="#" style="color:rgb(164,184,54);">Servidores</a></li>
-			          <li><a href="#" style="color:rgb(164,184,54);">Servicios</a></li>
+			          <li><a href="<?php echo URL; ?>personalizado" style="color:rgb(164,184,54);">Personalizado</a></li>
 			          <li><a href="#" style="color:rgb(164,184,54);">Listas</a></li>
 			          <li><a href="<?php echo URL; ?>dashboard/salir" style="color:rgb(164,184,54);">Cerrar Sesión</a></li>
 			        </ul>

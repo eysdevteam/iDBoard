@@ -36,11 +36,14 @@
 
 
         public function consultaRetorno($sql) {
-        	$this->datos = $this->con->exec($sql);
-        	return $this->datos;
+            $query = $this->con->prepare($sql);
+            $query->execute();
+            $result = $query->fetchAll(\PDO::FETCH_ASSOC);
+            $query->closeCursor();        	
+        	return $result;
         }
 
-        public function consultasDashboardDobles($sql1=null, $sql2=null) {
+        public function consultasDashboardDoblesSingle($sql1=null, $sql2=null) {
             
             $query1 = $this->con->prepare($sql1);
             $query1->execute();
@@ -50,6 +53,23 @@
             $query2 = $this->con->prepare($sql2);
             $query2->execute();
             $result2 = $query2->fetch(\PDO::FETCH_ASSOC);
+            $query2->closeCursor();
+                        
+            $array = array($result, $result2);
+            return $array;          
+            
+        }
+
+        public function consultasDashboardDoblesMultiples($sql1=null, $sql2=null) {
+            
+            $query1 = $this->con->prepare($sql1);
+            $query1->execute();
+            $result = $query1->fetchAll(\PDO::FETCH_ASSOC);
+            $query1->closeCursor();
+            
+            $query2 = $this->con->prepare($sql2);
+            $query2->execute();
+            $result2 = $query2->fetchAll(\PDO::FETCH_ASSOC);
             $query2->closeCursor();
                         
             $array = array($result, $result2);

@@ -1,8 +1,11 @@
 <?php 
 	use Models\Dashboard;
+	
 	$dashboard = new Dashboard();
 	$result = $dashboard->dashBoardSupIzq();
-	$result2 = $dashboard->dashboardSupDe();
+	$result2 = $dashboard->dashboardInfIzq();
+	$result3 = $dashboard->dashboardSupDe();
+	$result4 = $dashboard->dashboardInfDe();
 
 	foreach($result as $key=>$value) {
 		$servidores[] = $value["Nombre"];
@@ -12,7 +15,26 @@
 		$servidores2[] = $value2["Nombre"];
 		$valores2[] = $value2["Valor"];
 	}
-		
+	
+	
+	foreach($result3 as $item) {
+		foreach ($item as $key3 => $value3) {
+			$servidores3[] = $value3["Nombre"];
+			$valores3[] = $value3["Valor"];
+			$servicios3[] = $value3["Servicio"];
+			$tiempo3[] = $value3["Tiempo"];
+		}
+	}
+
+	foreach($result4 as $item) {
+		foreach ($item as $key4 => $value4) {
+			$servidores4[] = $value4["Nombre"];
+			$valores4[] = $value4["Valor"];
+			$servicios4[] = $value4["Servicio"];
+			$tiempo4[] = $value4["Tiempo"];
+		}
+	}
+
 ?>
 
 <!DOCTYPE html>
@@ -86,6 +108,7 @@
 		<script type="text/javascript">
 			google.charts.load('current', {packages: ['corechart', 'line']});
 			google.charts.setOnLoadCallback(drawBasic);
+			google.charts.setOnLoadCallback(drawInfDe);
 			google.charts.load('current', {packages: ['corechart', 'bar']});
 			google.charts.setOnLoadCallback(drawSupIzq);
 			google.charts.setOnLoadCallback(drawSupDe);
@@ -95,11 +118,11 @@
 			function drawBasic() {    
 			      
 			      var data = google.visualization.arrayToDataTable([
-			          ['Year', 'Sales', 'Expenses'],
-			          ['2004',  1000,      400],
-			          ['2005',  1170,      460],
-			          ['2006',  660,       1120],
-			          ['2007',  1030,      540]
+			          ['Fecha', '<?php echo $servicios3[0]; ?>', '<?php echo $servicios3[3]; ?>'],
+			          ['<?php echo $tiempo3[0]; ?>',  <?php echo $valores3[0]; ?>,      <?php echo $valores3[3]; ?>],
+			          ['<?php echo $tiempo3[1]; ?>',  <?php echo $valores3[1]; ?>,      <?php echo $valores3[4]; ?>],
+			          ['<?php echo $tiempo3[2]; ?>',  <?php echo $valores3[2]; ?>,      <?php echo $valores3[5]; ?>],
+			          
 			        ]);
 
 			      var options = {
@@ -112,10 +135,34 @@
 
 			      };
 
-			      var chart = new google.visualization.LineChart(document.getElementById('contenido3'));
+			      var chart = new google.visualization.LineChart(document.getElementById('contenido2'));
 
 			      chart.draw(data, options);
 			    }   
+
+			function drawInfDe() {    
+			      
+			    var data = google.visualization.arrayToDataTable([
+			        ['Fecha', '<?php echo $servicios4[0]; ?>', '<?php echo $servicios4[3]; ?>'],
+			        ['<?php echo $tiempo4[0]; ?>',  <?php echo $valores4[0]; ?>,      <?php echo $valores4[3]; ?>],
+			        ['<?php echo $tiempo4[1]; ?>',  <?php echo $valores4[1]; ?>,      <?php echo $valores4[4]; ?>],
+			        ['<?php echo $tiempo4[2]; ?>',  <?php echo $valores4[2]; ?>,      <?php echo $valores4[5]; ?>],
+			          
+			    ]);
+
+			    var options = {
+			      hAxis: {
+			        title: 'Time'
+			      },
+			      vAxis: {
+			        title: 'Popularity'
+			      }
+ 	            };
+
+			    var chart = new google.visualization.LineChart(document.getElementById('contenido5'));
+
+			    chart.draw(data, options);
+			} 
 
 			function drawSupDe() {
 			      var data = google.visualization.arrayToDataTable([
@@ -134,7 +181,7 @@
 			        }
 			        
 			      };
-			      var chart = new google.visualization.BarChart(document.getElementById('contenido2'));
+			      var chart = new google.visualization.BarChart(document.getElementById('contenido3'));
 			      chart.draw(data, options);
 			   	}
 

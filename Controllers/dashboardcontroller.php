@@ -9,6 +9,7 @@
 		public function __construct() {
 			$this->dashboard = new Dashboard();	
 		}
+		
 		public function index() {
 			session_start();
 			if (isset($_SESSION['Nombre'])) {
