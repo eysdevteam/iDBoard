@@ -19,7 +19,7 @@
 				header("location: http://localhost/iDBoard/");
 			}
 
-			$this->dashboard->dashBoardSupIzq();
+			//$this->dashboard->dashBoardSupIzq();
 		}
 
 		public function ingresar() {
