@@ -31,7 +31,6 @@
 			
 				unset($_SESSION["Nombre"]);
 				header("location: http://localhost/iDBoard/");
-
 			
 		}
 

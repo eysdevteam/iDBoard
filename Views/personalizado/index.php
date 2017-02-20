@@ -4,14 +4,13 @@
 
 	$personalizado = new Personalizado();
 	$servidores = $personalizado->returnServidores();
-	$servicios = $personalizado->returnServicios();
-
-	
+	$servicios = $personalizado->returnServicios();	
 
 ?>
 <!DOCTYPE html>
 <html lang="es">
 	<head>
+	
 		<meta charset="UTF-8">
 		<title>Personalizado | eys Soluciones Empresariales IT</title>	
 		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>	

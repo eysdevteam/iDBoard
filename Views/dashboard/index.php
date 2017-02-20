@@ -42,14 +42,14 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Dashboard | eys Soluciones Empresariales IT</title>
-	<!--Load the AJAX API-->
+	
+	<script type="text/javascript" src="//www.gstatic.com/charts/loader.js"></script>
 
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 <body style = "overflow: hidden">
 		<div class="row">
 		   	<div class="col-lg-6">
-		     	<div class="panel panel-default">
+		     	<div class="panel panel-default zoomTarget" data-targetsize="1.00" data-duration="600">
 		        	<div class="panel-heading">
 		                <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> Area Chart</h3>
 		            </div>
@@ -59,7 +59,7 @@
 		        </div>
 		    </div>
 		    <div class="col-lg-6">
-		        <div class="panel panel-default">
+		        <div class="panel panel-default zoomTarget" data-targetsize="1.00" data-duration="600">
 		            <div class="panel-heading">
 		                <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> Area Chart</h3>
 		            </div>
@@ -72,7 +72,7 @@
 
 		<div class="row">
 		   	<div class="col-lg-4">
-		     	<div class="panel panel-default">
+		     	<div class="panel panel-default zoomTarget" data-targetsize="1.00" data-duration="600">
 		        	<div class="panel-heading">
 		                <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> Area Chart</h3>
 		            </div>
@@ -82,7 +82,7 @@
 		        </div>
 		    </div>
 		    <div class="col-lg-4">
-		        <div class="panel panel-default">
+		        <div class="panel panel-default zoomTarget" data-targetsize="1.00" data-duration="600">
 		            <div class="panel-heading">
 		                <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> Area Chart</h3>
 		            </div>
@@ -92,7 +92,7 @@
 		    	</div>
 		    </div>
 		    <div class="col-lg-4">
-		        <div class="panel panel-default">
+		        <div class="panel panel-default zoomTarget" data-targetsize="1.00" data-duration="600">
 		            <div class="panel-heading">
 		                <h3 class="panel-title"><i class="fa fa-bar-chart-o fa-fw"></i> Area Chart</h3>
 		            </div>
@@ -224,6 +224,7 @@
 			      chart.draw(data, options);
 			    }
 	    </script>   
+
 	
 </body>
 </html>
