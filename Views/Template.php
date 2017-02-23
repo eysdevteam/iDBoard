@@ -44,7 +44,7 @@
 			          <li><a href="#" style="color:rgb(164,184,54);">Perfil</a></li>
 			          <li><a href="<?php echo URL; ?>personalizado" style="color:rgb(164,184,54);">Personalizado</a></li>
 			          <li><a href="<?php echo URL; ?>dashboard" style="color:rgb(164,184,54);">Dashboard</a></li>
-			          <li><a href="<?php echo URL; ?>dashboard/salir" style="color:rgb(164,184,54);">Cerrar Sesión</a></li>
+			          <li><a href="<?php echo URL; ?>welcome/salir" style="color:rgb(164,184,54);">Cerrar Sesión</a></li>
 			        </ul>
 			      </li>
 			     

@@ -27,6 +27,7 @@
             try{
                 $query = $this->con->prepare($sql);
                 $query->execute();
+                
                 return $this->datos = $query;
                 $query->closeCursor();
             }catch(PDOException $e) {
