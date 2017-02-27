@@ -30,10 +30,17 @@
 					$resultado = $this->con->datos->fetch(\PDO::FETCH_ASSOC);
 					print_r($resultado);
 			
-					$usuario = $resultado["Nombre"];					
-					$_SESSION['Nombre'] = $usuario;					
-					//header("location: http://localhost/iDBoard/dashboard");
+					$usuario = $resultado["Nombre"];
+					$Id_roles = $resultado["Id_roles"];
 					
+					if( $Id_roles === 1) {
+						$_SESSION['Nombre'] = $usuario;					
+						//header("location: http://localhost/iDBoard/dashboard");					
+					}					
+					else {
+						$_SESSION['Nombre'] = $usuario;					
+						//header("location: http://localhost/iDBoard/dashboard");
+					}
 				}
 				else {
 					
