@@ -34,12 +34,12 @@
 			<nav class="navbar navbar-inverse" >
 			  <div class="container-fluid">
 			    <div class="navbar-header">
-			      <a class="navbar-brand" href="http://www.eys.co"><img src="<?php echo URL; ?>/Views/template/img/EyS_0.png" alt="eys Soluciones Empresariales IT" style="width:150px; height: 30px;"></a>
+			      <a class="navbar-brand" href="http://www.eys.co" style="color:rgb(164,184,54);"><i>iDboard - eys Soluciones Empresariales IT.</i></a>
 			    </div>
 			    
 			    <ul class="nav navbar-nav navbar-right">
-			      <li ><a href="#" style="color:rgb(164,184,54);"><span class="glyphicon glyphicon-user"></span><?php echo " ".$_SESSION["Nombre"]?></a></li>
-			      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:rgb(164,184,54);"><span class="glyphicon glyphicon-align-justify"></span></a>
+			      <li ><a href="#" style="color:rgb(164,184,54);"><i class="fa fa-user-circle-o" aria-hidden="true"><?php echo " ".$_SESSION["Roles"]." - ".$_SESSION["Nombre"] ?></i></a></li>
+			      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:rgb(164,184,54);"><i class="fa fa-bars" aria-hidden="true"></i></a>
 			      	<ul class="dropdown-menu">
 			          <li><a href="#" style="color:rgb(164,184,54);">Perfil</a></li>
 			          <li><a href="<?php echo URL; ?>personalizado" style="color:rgb(164,184,54);">Personalizado</a></li>

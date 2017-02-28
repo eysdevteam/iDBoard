@@ -29,17 +29,17 @@
 					session_start();
 					$resultado = $this->con->datos->fetch(\PDO::FETCH_ASSOC);
 					print_r($resultado);
-			
-					$usuario = $resultado["Nombre"];
-					$Id_roles = $resultado["Id_roles"];
 					
-					if( $Id_roles === 1) {
-						$_SESSION['Nombre'] = $usuario;					
-						//header("location: http://localhost/iDBoard/dashboard");					
+					$_SESSION['Id'] = $resultado["Id"];
+					$_SESSION['Nombre'] = $resultado["Nombre"];
+					$_SESSION['Usuario'] = $resultado["Usuario"];
+					$_SESSION['Roles'] = $resultado["Roles"]; 
+										
+					if( $_SESSION["Roles"] == "Administrador") {
+						header("location: http://localhost/iDBoard/paneladmin");
 					}					
-					else {
-						$_SESSION['Nombre'] = $usuario;					
-						//header("location: http://localhost/iDBoard/dashboard");
+					else {										
+						header("location: http://localhost/iDBoard/dashboard");						
 					}
 				}
 				else {
