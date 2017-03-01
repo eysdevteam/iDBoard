@@ -10,6 +10,20 @@
 									
 		}
 
+		public function datosCliente() {
+
+			$Id_usuarios = $_SESSION["Id"];
+
+			$sql = "SELECT usuarios.Id as Id_usuarios, usuarios.Nombre as Nombre_usuario, servidores.Id as Id_servidores, servidores.Nombre as Nombre_servidores from usuario_servidor INNER JOIN servidores on usuario_servidor.Id_servidores = servidores.Id INNER JOIN usuarios on usuario_servidor.Id_usuarios = usuarios.Id and usuarios.Id = $Id_usuarios";
+
+			$result = $this->con->consultaRetorno($sql);
+
+			
+			echo "</br>";
+			return $result;
+
+		}
+
 		public function dashBoardSupIzq() {
 
 

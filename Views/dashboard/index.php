@@ -6,6 +6,8 @@
 	$result2 = $dashboard->dashboardInfIzq();
 	$result3 = $dashboard->dashboardSupDe();
 	$result4 = $dashboard->dashboardInfDe();
+	$cliente = $dashboard->datosCliente();
+	
 
 	foreach($result as $key=>$value) {
 		$servidores[] = $value["Nombre"];
