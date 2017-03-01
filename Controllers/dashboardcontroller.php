@@ -6,17 +6,35 @@
 		private $dashboard;
 				
 		public function __construct() {
-			$this->dashboard = new Dashboard();	
+			
+
+			session_start();
+			if (isset($_SESSION['Nombre'])) {
+				if ($_SESSION['Roles'] == "Cliente") {
+					include "views/Template.php";
+					$this->dashboard = new Dashboard();
+				}
+				else {									
+					header("location: http://localhost/iDBoard/paneladmin");
+				}
+				
+			}
+			
+			else {
+				header("location: http://localhost/iDBoard");
+								
+			}
+					
 		}
 		
 		public function index() {
-			session_start();
+			/*session_start();
 			if (isset($_SESSION['Nombre'])) {
 				include "views/Template.php";
 			}
 			else {
 				header("location: http://localhost/iDBoard/");
-			}		
+			}*/		
 		}
 	}
 

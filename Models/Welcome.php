@@ -19,8 +19,6 @@
 				$this->pass = $_POST["password"];
 				
 				$sql = "call sp_login('$this->user','$this->pass')";
-
-
 				
 				$query = $this->con->consultaProtegida($sql);
 				

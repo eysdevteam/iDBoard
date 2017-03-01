@@ -2,12 +2,12 @@
 	use Models\Dashboard;
 	
 	$dashboard = new Dashboard();
+	$cliente = $dashboard->datosCliente();
 	$result = $dashboard->dashBoardSupIzq();
 	$result2 = $dashboard->dashboardInfIzq();
 	$result3 = $dashboard->dashboardSupDe();
-	$result4 = $dashboard->dashboardInfDe();
-	$cliente = $dashboard->datosCliente();
-	
+	$result4 = $dashboard->dashboardInfDe();	
+	$result5 = $dashboard->dashboardInfMedio();
 
 	foreach($result as $key=>$value) {
 		$servidores[] = $value["Nombre"];
@@ -17,7 +17,14 @@
 		$servidores2[] = $value2["Nombre"];
 		$valores2[] = $value2["Valor"];
 	}
-	
+
+	foreach($result5 as $value5) {
+		
+		$servidor5[] = $value5["Nombre"];
+		$valor5[] = $value5["Valor"];
+		$tiempo5[] = $value5["Tiempo"];	
+		
+	}	
 	
 	foreach($result3 as $item) {
 		foreach ($item as $key3 => $value3) {
@@ -114,8 +121,8 @@
 			google.charts.load('current', {packages: ['corechart', 'bar']});
 			google.charts.setOnLoadCallback(drawSupIzq);
 			google.charts.setOnLoadCallback(drawSupDe);
-			google.charts.load("current", {packages:["corechart"]});
-			google.charts.setOnLoadCallback(drawChart);
+			google.charts.load('current', {packages: ['corechart', 'bar']});
+			google.charts.setOnLoadCallback(draw);
 
 			function drawBasic() {    
 			      
@@ -207,24 +214,33 @@
 			      var chart = new google.visualization.BarChart(document.getElementById('contenido'));
 			      chart.draw(data, options);
 			    } 
-			
-			function drawChart() {
-			      var data = google.visualization.arrayToDataTable([
-			        ['Task', 'Hours per Day'],
-			        ['Work',     11],
-			        ['Eat',      2],
-			        ['Commute',  2],
-			        ['Watch TV', 2],
-			        ['Sleep',    7]
-			      ]);
+						
+			function draw() {
 
-			      var options = {
-			        title: 'My Daily Activities',
-			        pieHole: 0.4,
-			      };
-			      var chart = new google.visualization.PieChart(document.getElementById('contenido4'));
-			      chart.draw(data, options);
-			    }
+      			var data = new google.visualization.DataTable();
+      			var data = google.visualization.arrayToDataTable([
+			        ['Fecha','<?php echo $servidor5[0] ?>'],
+                	['<?php echo $tiempo5[0] ?>',<?php echo $valor5[0] ?>],
+                	['<?php echo $tiempo5[1] ?>',<?php echo $valor5[1] ?>],
+                	['<?php echo $tiempo5[2] ?>',<?php echo $valor5[2] ?>],
+                	
+                ]);
+
+      			var options = {
+      				hAxis: {
+          				title: 'Fecha y Hora'                    
+       				},
+       				vAxis: {
+       					title: 'Valor'
+       				},
+        
+        		
+      			};
+
+      			var chart = new google.visualization.ColumnChart(
+        		document.getElementById('contenido4'));
+        		chart.draw(data, options);
+    		}
 	    </script>   
 
 	
