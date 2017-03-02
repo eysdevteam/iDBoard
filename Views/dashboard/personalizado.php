@@ -1,11 +1,37 @@
-		
 <?php 
-	use Models\Personalizado;
+	use Models\Dashboard;
 
-	$personalizado = new Personalizado();
+	$personalizado = new Dashboard();
 	$servidores = $personalizado->returnServidores();
 	$servicios = $personalizado->returnServicios();	
 
+	$datos = $personalizado->datosCliente();
+
+	$i = 1;
+	foreach ($datos as $key => $value) {
+		$servers[] = $value["Nombre_servidores"];
+		$id_servers[] = $value["Id_servidores"];
+	}
+
+	foreach ($datos as $key => $value) {
+		$servers[] = $value["Nombre_servidores"];
+		$id_servers[] = $value["Id_servidores"];
+	}
+
+	//$servers = array_unique($servers);
+	//$id_servers = array_unique($id_servers);
+
+	//$servidores = array_combine($id_servers, $servers);
+
+	print_r ($servers);
+	echo "</br>Nueva línea </br>";
+	print_r ($id_servers);
+	//print_r ($servidores);
+
+	echo "</br>Nueva línea </br>";
+
+	print_r ($datos);
+	
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -20,12 +46,12 @@
 			<div class="row">
 				<div class="col-lg-6 col-lg-offset-3 text-center" style="margin-top:2px;">
 					<div class="form-inline">
-						<form action="<?php echo URL; ?>personalizado" method="GET" role="form" style="display: block;">
+						<form action="<?php echo URL; ?>dashboard/personalizado" method="GET" role="form" style="display: block;">
 						  	<select class="form-control" name="server">
-							    <?php 
-								    foreach($servidores as $server) {
-								    	echo '<option id="'.$server["Id"].'" value="'.$server["Id"].'" >'.$server["Nombre"].'</option>';	
-								    }
+							    <?php
+							    	foreach($servidores as $key=>$server) {
+									    echo '<option id="'.$key.'" value="'.$key.'" >'.$server.'</option>';	
+									}								    
 							    ?>		    
 							</select>
 							<select class="form-control" name="service">
@@ -93,5 +119,3 @@
         </script>
 	</body>
 </html>
-
-		

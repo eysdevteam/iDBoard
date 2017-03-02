@@ -36,6 +36,10 @@
 				header("location: http://localhost/iDBoard/");
 			}*/		
 		}
+
+		public function personalizado() {
+			
+		}
 	}
 
 	
