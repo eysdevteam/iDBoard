@@ -20,7 +20,7 @@
 			$result = $this->con->consultaRetorno($sql);
 			$this->datos = $result;
 
-			return $result;			
+			return $result;		
 			
 		}
 
@@ -79,19 +79,17 @@
 
 		}
 
-		public function returnServidores() {
-			$server = "SELECT * From servidores";
-			$result	= $this->con->consultaRetorno($server);
-			return $result;
-		}
-
 		public function returnServicios() {
-			$service = "SELECT * From servicios";
-			$result	= $this->con->consultaRetorno($service);
-			return $result;
+			//$id_server = $_GET['Id_servidores'];
+			$Id_usuarios = $_SESSION["Id"];
+
+			$sql = "SELECT DISTINCT servidores.Id as Id_servidores, servidores.Nombre as Nombre_servidores, servicios.Id as Id_servicios, servicios.Servicio as Servicio_servicios, usuarios.Id as Id_usuarios, usuarios.Nombre as Nombre_usuarios from servidor_servicio INNER JOIN servidores on servidores.Id = servidor_servicio.Id_servidores and servidores.Id = 3 INNER JOIN servicios on servidor_servicio.Id_servicios = servicios.Id INNER JOIN usuarios on usuarios.Id = '$Id_usuarios' and usuarios.Id = servidor_servicio.Id_usuarios";
+
+			//$result	= $this->con->consultaRetorno($service);
+			//return $result;
 		}
 
-		public function graph() {
+		/*public function graph() {
 			$servidorId = $_GET["server"];
 			$servicioId = $_GET["service"];
 
@@ -100,7 +98,7 @@
 			$result	= $this->con->consultaRetorno($sql); 
 			return $result;
 			
-		}
+		}*/
 
 			
 	}
