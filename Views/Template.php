@@ -42,7 +42,7 @@
 			      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color:rgb(164,184,54);"><i class="fa fa-bars" aria-hidden="true"></i></a>
 			      	<ul class="dropdown-menu">
 			          <li><a href="#" style="color:rgb(164,184,54);">Perfil</a></li>
-			          <li><a href="<?php echo URL; ?>personalizado" style="color:rgb(164,184,54);">Personalizado</a></li>
+			          <li><a href="<?php echo URL; ?>dashboard/personalizado" style="color:rgb(164,184,54);">Personalizado</a></li>
 			          <li><a href="<?php echo URL; ?>dashboard" style="color:rgb(164,184,54);">Dashboard</a></li>
 			          <li><a href="<?php echo URL; ?>welcome/salir" style="color:rgb(164,184,54);">Cerrar Sesión</a></li>
 			        </ul>

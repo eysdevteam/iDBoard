@@ -47,7 +47,7 @@
 				<div class="col-lg-6 col-lg-offset-3 text-center" style="margin-top:2px;">
 					<div class="form-inline">
 						<form action="<?php echo URL; ?>dashboard/personalizado" method="GET" role="form" style="display: block;">
-						  	<select class="form-control" name="server">
+						  	<select class="form-control" name="server" onchange="this.form.submit()">
 							    <?php
 							    	foreach($servidores as $key=>$server) {
 									    echo '<option id="'.$key.'" value="'.$key.'" >'.$server.'</option>';	
