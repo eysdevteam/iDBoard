@@ -7,8 +7,8 @@
 		public $datos;
 				
 		public function __construct() {
-			$this->con = new Conexion();
-									
+			$this->con = new Conexion();	
+					
 		}
 
 		public function datosCliente() {
@@ -20,13 +20,14 @@
 			$result = $this->con->consultaRetorno($sql);
 			$this->datos = $result;
 
+
 			return $result;		
 			
 		}
 
 		public function dashBoardSupIzq() {
 
-
+			
 			$server1 = "SELECT servidores.Id, servidores.Nombre, servicios.Servicio, servidor_servicio.Valor from servidor_servicio INNER JOIN servidores on servidor_servicio.Id_servidores = servidores.Id and servidores.Id = '1' INNER JOIN servicios on servidor_servicio.Id_servicios = servicios.Id and servicios.Id = '2' ORDER by servidor_servicio.Id DESC LIMIT 0,1";
 
 			$server2 = "SELECT servidores.Id, servidores.Nombre, servicios.Servicio, servidor_servicio.Valor from servidor_servicio INNER JOIN servidores on servidor_servicio.Id_servidores = servidores.Id and servidores.Id = '2' INNER JOIN servicios on servidor_servicio.Id_servicios = servicios.Id and servicios.Id = '2' ORDER by servidor_servicio.Id DESC LIMIT 0,1";
@@ -34,6 +35,7 @@
 			$result = $this->con->consultasDashboardDoblesSingle($server1, $server2);
 			
 			return $result;
+			
 		}
 		
 		
@@ -79,26 +81,42 @@
 
 		}
 
+		
 		public function returnServicios() {
-			//$id_server = $_GET['Id_servidores'];
-			$Id_usuarios = $_SESSION["Id"];
-
-			$sql = "SELECT DISTINCT servidores.Id as Id_servidores, servidores.Nombre as Nombre_servidores, servicios.Id as Id_servicios, servicios.Servicio as Servicio_servicios, usuarios.Id as Id_usuarios, usuarios.Nombre as Nombre_usuarios from servidor_servicio INNER JOIN servidores on servidores.Id = servidor_servicio.Id_servidores and servidores.Id = 3 INNER JOIN servicios on servidor_servicio.Id_servicios = servicios.Id INNER JOIN usuarios on usuarios.Id = '$Id_usuarios' and usuarios.Id = servidor_servicio.Id_usuarios";
-
-			//$result	= $this->con->consultaRetorno($service);
-			//return $result;
-		}
-
-		/*public function graph() {
-			$servidorId = $_GET["server"];
-			$servicioId = $_GET["service"];
-
-			$sql = "SELECT servidores.Id, servidores.Nombre, servicios.Servicio, servidor_servicio.Valor, servidor_servicio.Tiempo from servidor_servicio INNER JOIN servidores on servidor_servicio.Id_servidores = servidores.Id and servidores.Id = '$servidorId' INNER JOIN servicios on servidor_servicio.Id_servicios = servicios.Id and servicios.Id = '$servicioId' ";
-
-			$result	= $this->con->consultaRetorno($sql); 
-			return $result;
 			
-		}*/
+			if(isset($_GET["server"])) {
+				$id_server = $_GET["server"];
+				$Id_usuarios = $_SESSION["Id"];
+
+				$sql = "SELECT DISTINCT servidores.Id as Id_servidores, servidores.Nombre as Nombre_servidores, servicios.Id as Id_servicios, servicios.Servicio as Servicio_servicios, usuarios.Id as Id_usuarios, usuarios.Nombre as Nombre_usuarios from servidor_servicio INNER JOIN servidores on servidores.Id = servidor_servicio.Id_servidores and servidores.Id = '$id_server' INNER JOIN servicios on servidor_servicio.Id_servicios = servicios.Id INNER JOIN usuarios on usuarios.Id = '$Id_usuarios' and usuarios.Id = servidor_servicio.Id_usuarios";
+
+				$result	= $this->con->consultaRetorno($sql);
+				return $result;
+			}
+			
+		}
+		
+
+		public function graph() {
+			if(isset($_GET["server"])) {
+				$servidorId = $_GET["server"];
+
+				$_SESSION["server"] = $servidorId;
+				if(isset($GET["service"])) {
+					$servicioId = $_GET["service"];
+					echo "</br> función GRAPH";
+
+					print $servidorId;
+					print $servicioId;
+
+					$sql = "SELECT servidores.Id, servidores.Nombre, servicios.Servicio, servidor_servicio.Valor, servidor_servicio.Tiempo from servidor_servicio INNER JOIN servidores on servidor_servicio.Id_servidores = servidores.Id and servidores.Id = '$servidorId' INNER JOIN servicios on servidor_servicio.Id_servicios = servicios.Id and servicios.Id = '$servicioId' ";
+
+					$result	= $this->con->consultaRetorno($sql); 
+					return $result;
+				}
+			}
+			
+		}
 
 			
 	}
